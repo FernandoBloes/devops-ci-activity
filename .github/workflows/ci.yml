@@ -16,9 +16,10 @@ jobs:
 
     - name: Instalar dependências
       run: |
-        python3 -m pip install --upgrade pip
-        pip3 install pytest==7.4.0
+        python3 -m venv venv
+        ./venv/bin/pip install --upgrade pip
+        ./venv/bin/pip install pytest==7.4.0
 
     - name: Executar testes com pytest
       run: |
-        python3 -m pytest test_calculadora.py -v --tb=short
+        ./venv/bin/pytest test_calculadora.py -v --tb=short
